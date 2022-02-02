@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h2>DANH SACH NGUOI DUNG</h2>
+            <p><a class="btn btn-primary" href="/">ADD USER</a></p>
+            <p><a class="btn btn-primary" href="/select">BACK TO SELCTION</a></p>
+            <table class="table table-bordered">
+               <tr>
+                   <td>id</td>
+                   <td>name</td>
+                   <td>mark</td>
+                   <td>major</td>
+                   <td>ACTION</td>
+               </tr>
+               <tr th:each="item: ${LIST_STUDENT}">
+                <td th:text="${item.id}">id</td>
+                <td th:text="${item.name}">name</td>
+                <td th:text="${item.mark}">mark</td>
+                <td th:text="${item.major.id}">major</td>
+                <td>ACTION</td>
+            </tr>
+            </table>
+        </div>
+    </body>
+</html>
